@@ -252,12 +252,12 @@ export default function Swap() {
   return (
     <>
       <div className="flex justify-center w-full items-center flex-col lg:flex-row">
-        <div className="w-full lg:w-1/3">
-          <TradeCard>
+        <div className="w-full lg:w-1/3 p-10">
+          <div className='rounded-xl bg-[#1a1a1a]'>
             <div className="flex flex-col justify-evenly items-center w-full h-full">
               <div className="flex justify-between w-full py-6 px-3">
                 <div className="flex flex-col justify-center items-start">
-                  <span className="font-Syne text-3xl text-white font-[700]">Swap</span>
+                  <span className="font-Syne text-4xl text-white font-[700]">Swap</span>
                   <p className="font-[400] font-Poppins text-[0.9em] text-[#9d9d9d]">Trade tokens in an instant</p>
                 </div>
                 <div className="flex justify-center gap-3 items-center">
@@ -389,7 +389,7 @@ export default function Swap() {
                 </button>
               </div>
             </div>
-          </TradeCard>
+          </div>
         </div>
         <Toast message={toastMessage} toastType={toastType} duration={10} onHide={() => setShowToast(false)} show={showToast} />
         <SwapSettingsModal isOpen={isSettingsModalVisible} onClose={() => setIsSettingsModalVisible(false)} />
