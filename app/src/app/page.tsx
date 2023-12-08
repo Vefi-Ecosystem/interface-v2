@@ -1,113 +1,140 @@
-import Image from 'next/image'
+"use client"
+
+import Image from 'next/image';
+import Head from 'next/head';
+import { Footer } from '../components/Footer';
+import Link from 'next/link';
+import chains from '../assets/chains.json';
+import { map } from 'lodash';
+import { FiCheckCircle } from 'react-icons/fi';
+
+
 
 export default function Home() {
+  const features = [
+    {
+      title: "Analytics",
+      subtitle: 'Fast and Secure Exchange of Digital Assets',
+      paragraph: " In-depth periodical market data and token information (with charts) gotten from all trades that have occured on our DEX.",
+      linkURl: '/dex',
+      linkTitle: "Swap"
+    },
+    {
+      title: "Trade",
+      subtitle: 'Unifying Digital Assets for Seamless Transactions',
+      paragraph: "Exchange assets or earn LP tokens through liquidity provision on our DEX.",
+      linkURl: '/dex',
+      linkTitle: "Bridge"
+    },
+    {
+      title: "Staking Pools",
+      subtitle: 'Unifying Digital Assets for Seamless Transactions',
+      paragraph: " Stake tokens to earn other tokens as rewards. Maximize profit with this scheme.",
+      linkURl: '/dex',
+      linkTitle: "Bridge"
+    }
+  ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Head>
+        <title>3Swap | Dex Aggregator</title>
+      </Head>
+      <div className="w-full flex flex-col justify-stretch items-center pb-[15rem] relative">
+        <Image src="/bg/planet-cut.svg" width={558} height={722} alt='Planet' className='absolute top-0 left-0 z-0' />
+        <div className='w-full p-5 mb-[-20rem] flex flex-col items-start gap-y-5 z-10'>
+          <h2 className='sm:text-6xl text-5xl sm:leading-[4.5rem] leading-[3rem] text-white mt-[4rem]'>
+            <span className='bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent shadow-purple-600 font-extrabold'> Enjoy Fast Transactions, Security,<br />
+              Freedom</span> <br /> & Total Ownership Of Your Assets.</h2>
+          <p>Lightning-Fast transactions, secure smart contracts, and complete asset control.</p>
+          <Link href="/dex" className="px-6 py-2 bg-gradient-to-r from-[#FBAA19] to-[#ee710b] text-white rounded-lg shadow-md">Launch dApp</Link>
+        </div>
+        <div className='ml-auto sm:mb-[-10rem] mb-[4rem]'>
+          <Image src="/bg/planet.svg" width={1096} height={722} alt='planet image' className='' />
+        </div>
+        <div className='flex items-center justify-center flex-col'>
+          <h3 className='sm:text-4xl text-xl font-extrabold text-center text-white'>
+            Enjoy Fast Transactions, Security, And Total Ownership Of Your Assets.
+            Lightning-Fast transactions, secure smart contracts, and complete asset control.
+          </h3>
+          <p className='bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent text-4xl font-semibold text-center'>VinuChain, Base chains , EVM</p>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className='w-full'>
+        <div className='flex justify-center items-center gap-y-3 flex-col sm:mb-0 mb-[5rem]'>
+          <h3 className='bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent text-center text-4xl font-bold leading-loose'>Many-In-One DApp</h3>
+          <p className='text-white text-center'>Decentralized Trade. Token Launch. Multi-Signatory Wallets. Staking Pools. Bridge</p>
+        </div>
+        <div className="bg-[url('/bg/3d.png')] h-[85vh] w-full bg-no-repeat bg-center bg-cover flex items-center justify-center sm:gap-x-10 gap-y-5 sm:flex-row flex-col p-5">
+          {features.map((feature, index) => {
+            return (
+              <div key={index} className='max-w-[450px] h-[420px] backdrop-blur-lg text-center rounded-xl shadow-xl gap-3 space-y-4 relative'>
+                <div className="z-20 flex flex-col items-center justify-center h-full space-y-8 p-3 relative">
+                  <h3 className='font-extrabold text-4xl bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent'>{feature.title}</h3>
+                  {/* <p className='font-bold text-white'>{feature.subtitle}</p> */}
+                  <p className='text-white'>{feature.paragraph}</p>
+                  {/* <Link href={feature.linkURl} className="px-6 py-2 bg-gradient-to-r from-[#FBAA19] to-[#ee710b] text-white rounded-lg shadow-md">{feature.linkTitle}</Link> */}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        <section className="w-full flex flex-col justify-center items-center gap-6 sm:mb-0 mt-[10rem]">
+          <span className="bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent font-Syne capitalize text-[2.5em] lg:text-[3.5em] text-center lg:max-w-[70rem] font-[700]">
+            supported chains
+          </span>
+          <div className="flex justify-center items-center w-full px-1 lg:px-5">
+            <div className="carousel carousel-center px-4 lg:px-8 space-x-3 rounded-box">
+              {map(Object.values(chains), (chain, index) => (
+                <div key={index} className="carousel-item flex justify-center gap-2 text-white text-[1em] items-center font-Poppins lg:w-1/5">
+                  <div className="avatar">
+                    <div className="w-10 rounded-full">
+                      <img src={chain.logoURI} alt={chain.name} />
+                    </div>
+                  </div>
+                  <span>{chain.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="flex flex-col w-full justify-center items-center gap-16 p-4 lg:p-5 mt-10">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-12 w-full">
+            <div className="flex flex-col justify-center items-center gap-4 w-full lg:w-auto text-center">
+              <span className="font-Syne text-[2.5em] lg:text-[4em] capitalize font-[700] bg-gradient-to-r from-[#FBAA19] to-[#ee710b] drop-shadow-md bg-clip-text text-transparent lg:max-w-[38rem]">
+                Fully decentralized. completely secure
+              </span>
+              <p className="text-[#a49999] font-Poppins text-[1em] lg:max-w-[38rem]">
+                VefDefi aims to connect all isolated blockchains and establish a cross-chain assets exchange, providing underlying support for the
+                ecosystem. Experience lightning-fast transactions, unparalleled security, and complete ownership of your assets.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center w-full gap-3 capitalize">
+            <div className="flex justify-evenly items-center gap-2 w-full flex-col lg:flex-row px-2 lg:px-10">
+              <div className="flex justify-start items-center w-full lg:w-1/3 gap-2 px-3 py-3 self-stretch bg-[#fff]/[.06] order-[0] rounded-[10px]">
+                <FiCheckCircle className="text-[#ee710b]" />
+                <span className="font-[500] font-Syne text-[0.95em] text-[#fff]">instant trades</span>
+              </div>
+              <div className="flex justify-start items-center w-full lg:w-1/3 gap-2 px-3 py-3 self-stretch bg-[#fff]/[.06] order-[0] rounded-[10px]">
+                <FiCheckCircle className="text-[#ee710b]" />
+                <span className="font-[500] font-Syne text-[0.95em] text-[#fff]">secure smart contracts</span>
+              </div>
+            </div>
+            <div className="flex justify-evenly items-center gap-2 w-full flex-col lg:flex-row px-2 lg:px-10">
+              <div className="flex justify-start items-center w-full lg:w-1/3 gap-2 px-3 py-3 self-stretch bg-[#fff]/[.06] order-[0] rounded-[10px]">
+                <FiCheckCircle className="text-[#ee710b]" />
+                <span className="font-[500] font-Syne text-[0.95em] text-[#fff]">community-driven</span>
+              </div>
+              <div className="flex justify-start items-center w-full lg:w-1/3 gap-2 px-3 py-3 self-stretch bg-[#fff]/[.06] order-[0] rounded-[10px]">
+                <FiCheckCircle className="text-[#ee710b]" />
+                <span className="font-[500] font-Syne text-[0.95em] text-[#fff]">accurate analytics</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Footer />
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   )
 }
