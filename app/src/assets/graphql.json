@@ -1,0 +1,58 @@
+{
+  "32520": {
+    "root": "https://graph.vefinetwork.org/app/bitgert/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "592": {
+    "root": "https://graph.vefinetwork.org/app/astar/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "86": {
+    "root": "https://graph.vefinetwork.org/app/gatechain/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "66": {
+    "root": "https://graph.vefinetwork.org/app/okc/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "137": {
+    "root": "https://graph.vefinetwork.org/app/polygon/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "56": {
+    "root": "https://graph.vefinetwork.org/app/smartchain/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "40": {
+    "root": "https://graph.vefinetwork.org/app/telos/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  },
+  "888": {
+    "root": "https://graph.vefinetwork.org/app/wanchain/query/subgraphs/name",
+    "slugs": {
+      "exchange": "/vefi/exchange",
+      "pools": "/vefi/pools"
+    }
+  }
+}
