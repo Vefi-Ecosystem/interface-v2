@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="796.052" height="208.533" viewBox="0 0 796.052 208.533">
+  <g id="Group_15" data-name="Group 15" transform="translate(-302.948 -589.614)">
+    <text id="_3SWAP" data-name="3SWAP" transform="translate(528 723)" fill="#fff" font-size="124" font-family="Kinn-Bold, Kinn" font-weight="700"><tspan x="0" y="0">3SWAP</tspan></text>
+    <text id="Decentralized_exchange_with_extra_powers." data-name="Decentralized exchange with extra powers." transform="translate(528 776)" fill="#fce8a5" font-size="24" font-family="Poppins-Medium, Poppins" font-weight="500" letter-spacing="0.056em"><tspan x="0" y="0">Decentralized exchange with extra powers.</tspan></text>
+    <g id="Group_14" data-name="Group 14" transform="translate(-881.3 -25.929)">
+      <circle id="Ellipse_6" data-name="Ellipse 6" cx="104.267" cy="104.267" r="104.267" transform="translate(1184.249 615.543)" fill="#6e00ff"/>
+      <g id="Group_9" data-name="Group 9" transform="translate(1212.477 610.782) rotate(13)">
+        <g id="Group_7" data-name="Group 7" transform="translate(0 59.087) rotate(-22)">
+          <rect id="Rectangle_1" data-name="Rectangle 1" width="114.461" height="15.547" transform="matrix(0.819, -0.574, 0.574, 0.819, 0, 65.652)" fill="#fff"/>
+          <rect id="Rectangle_4" data-name="Rectangle 4" width="114.461" height="15.547" transform="translate(144.84 103.586) rotate(-124)" fill="#fff"/>
+        </g>
+        <g id="Group_8" data-name="Group 8" transform="translate(20.379 53.433) rotate(-1)">
+          <rect id="Rectangle_1-2" data-name="Rectangle 1" width="111.415" height="15.134" transform="matrix(0.819, 0.574, -0.574, 0.819, 8.68, 24.528)" fill="#fff"/>
+          <rect id="Rectangle_4-2" data-name="Rectangle 4" width="111.415" height="15.134" transform="translate(153.532 8.463) rotate(124)" fill="#fff"/>
+        </g>
+        <g id="Group_6" data-name="Group 6" transform="translate(32.879 40.894)">
+          <rect id="Rectangle_1-3" data-name="Rectangle 1" width="89.74" height="14.549" transform="matrix(0.819, 0.574, -0.574, 0.819, 8.345, 21.076)" fill="#fceea5"/>
+          <rect id="Rectangle_4-3" data-name="Rectangle 4" width="89.015" height="14.549" transform="matrix(-0.559, 0.829, -0.829, -0.559, 125.017, 8.135)" fill="#fceea5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
