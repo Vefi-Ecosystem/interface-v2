@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Providers from '../providers/Web3'
-import Header from '../components/Header'
+import Header from '../ui/Header'
 
 export const metadata: Metadata = {
-  title: 'VefDefi DApps | Homepage',
-  description: 'Enjoy Fast Transactions, Security, And Total Ownership Of Your Assets.',
+  title: 'DApps | Fabulous DeFi experience.',
+  description: 'A fabulously delivered platform that meets all your DeFi needs.',
 }
 
 export default function RootLayout({
@@ -16,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body>
+        <body className="bg-[#0c0c0c]">
+          <div className="container mx-auto min-h-screen">
           <Header />
           {children}
+          </div>
         </body>
       </Providers>
     </html>

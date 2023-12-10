@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS=\"--max_old_space_size=1024\" next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -31,9 +31,10 @@
     "@web3-react/walletconnect-connector": "^6.2.13",
     "antd": "^4.20.2",
     "assert": "^2.0.0",
+    "awesome-toast-component": "^2.0.6",
     "axios": "^1.1.2",
     "chart.js": "^3.9.1",
-    "daisyui": "^2.25.0",
+    "daisyui": "^4.4.19",
     "eth-address": "^1.0.1",
     "framer-motion": "^10.16.16",
     "graphql": "^16.6.0",
@@ -64,6 +65,8 @@
     "use-sound": "^4.0.1",
     "vefi-multi-sig": "^2.0.0",
     "vefi-token-launchpad-staking": "^4.0.0",
+    "viem": "^1.19.11",
+    "wagmi": "^1.4.10",
     "web3": "^1.8.0"
   },
   "devDependencies": {

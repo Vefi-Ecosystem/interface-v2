@@ -13,6 +13,7 @@ import { useWeb3Context } from '../../contexts/web3';
 import ProviderSelectModal from '../ProviderSelectModal';
 import { useCurrentChain } from '../../hooks/global';
 import ChainSwitchModal from '../ChainSwitchModal';
+import { syne } from '../../fonts';
 
 type ActiveLinkProps = LinkProps & {
   children: ReactElement;
@@ -52,7 +53,7 @@ const ActiveLink = ({ children, activeClassName, ...props }: ActiveLinkProps) =>
   );
 };
 
-export default function Header() {
+const Header: React.FC = () => {
   const [showMobileSidebar, setShowMobileSidebar] = useState<boolean>(false);
   const [showProviderModal, setShowProviderModal] = useState<boolean>(false);
   const { active, account, error: web3Error, disconnectWallet } = useWeb3Context();
@@ -60,52 +61,30 @@ export default function Header() {
   const [showChainSwitchModal, setShowChainSwitchModal] = useState<boolean>(false);
   return (
     <>
-      {web3Error && (
-        <div className="alert alert-error w-full rounded-[2px]">
-          <div>
-            <FiX />
-            <span className="text-white font-poppins">{web3Error.message}</span>
-          </div>
-        </div>
-      )}
-      <div className="bg-[#0f0f10]/[.08] w-full font-Syne">
-        <div className="flex flex-row justify-between px-[38px] py-[16px] items-center w-full">
+      
+        <div className="bg-transparent flex flex-row justify-between px-3 py-4 items-center w-full border-b border-[#fff]">
           <div className="flex justify-center items-center cursor-pointer">
             <Link href="/">
               <Image src="/images/logo/vefdefi_logo.svg" alt="vefDefi_logo" width={80} height={40} />
             </Link>
           </div>
-          <div className="md:flex flex-row justify-center items-center hidden w-auto gap-3">
-            <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/dex">
-                <span className="text-white text-[1em] font-[400]">Trade</span>
+          <div className={`md:flex flex-row justify-center items-center hidden gap-3 ${syne.className}`}>
+          <ActiveLink activeClassName="bg-[#fbaa19] rounded-md text-[#fff]" href="/trade">
+                <span className="text-[#b2b2b2] text-[1em] font-[400] px-2 py-2 capitalize">trade</span>
               </ActiveLink>
-            </div>
-            <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/analytics">
-                <span className="text-white text-[1em] font-[400]">Analytics</span>
+              <ActiveLink activeClassName="bg-[#fbaa19] rounded-md text-[#fff]" href="/analytics">
+                <span className="text-[#b2b2b2] text-[1em] font-[400] px-2 py-2 capitalize">analytics</span>
               </ActiveLink>
-            </div>
-            <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/launchpad">
-                <span className="text-white text-[1em] font-[400]">Launchpad</span>
+              <ActiveLink activeClassName="bg-[#fbaa19] rounded-md text-[#fff]" href="/launchpad">
+                <span className="text-[#b2b2b2] text-[1em] font-[400] px-2 py-2 capitalize">launchpad</span>
               </ActiveLink>
-            </div>
-            <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/staking">
-                <span className="text-white text-[1em] font-[400]">Staking Pools</span>
+              <ActiveLink activeClassName="bg-[#fbaa19] rounded-md text-[#fff]" href="/staking">
+                <span className="text-[#b2b2b2] text-[1em] font-[400] px-2 py-2 capitalize">staking</span>
               </ActiveLink>
-            </div>
-            {/* <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/multisig">
-                <span className="text-white text-[1em] font-[400]">Multi-Signature</span>
+            
+              <ActiveLink activeClassName="bg-[#fbaa19] rounded-md text-[#fff]" href="/bridge">
+                <span className="text-[#b2b2b2] text-[1em] font-[400] px-2 py-2 capitalize">bridge</span>
               </ActiveLink>
-            </div>*/}
-            <div className="px-[23px] cursor-pointer">
-              <ActiveLink activeClassName="font-[800] border-b-2 border-[#FBAA19]" href="/bridge">
-                <span className="text-white text-[1em] font-[400]">Bridge</span>
-              </ActiveLink>
-            </div>
           </div>
           <div className="flex justify-center items-center gap-2">
             <div className="flex justify-center items-center gap-2 flex-1">
@@ -186,7 +165,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-      </div>
+      
       <Transition
         as="div"
         className="flex flex-col lg:hidden gap-2 overflow-auto my-auto hidden-scrollbar justify-between items-center w-full px-4 py-4 z-20"
@@ -231,3 +210,5 @@ export default function Header() {
     </>
   );
 }
+
+export default Header;
