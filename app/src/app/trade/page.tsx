@@ -1,16 +1,16 @@
 "use client"
 
-/* eslint-disable unused-imports/no-unused-vars */
 import React, { useEffect, useMemo, useState } from 'react';
 import Head from 'next/head';
 import { useRouter, useSearchParams } from 'next/navigation';
-import ToggleButton from '../../components/Button/ToggleButton';
+import ToggleButton from '../../ui/Button/ToggleButton';
 import { Liquidity, Swap } from '../../routes/dex';
 
 
 enum Route {
     SWAP = 'swap',
-    LIQUIDITY = 'liquidity'
+    LIQUIDITY = 'liquidity',
+    AGGREGATOR = 'aggregator'
 }
 
 const useDEXSubRoutes = (routes: Route) => {
@@ -50,11 +50,14 @@ export default function Dex() {
             </Head>
             <div className="flex justify-center items-center py-12 w-full">
                 <div className="flex justify-center items-center rounded-[30px] bg-[#fff]/[.11] py-1 px-1">
-                    <ToggleButton isActive={route === Route.SWAP} onClick={() => push(`/dex?tab=${Route.SWAP}`)}>
-                        <span>Swap</span>
+                    <ToggleButton isActive={route === Route.SWAP} onClick={() => push(`/trade?tab=${Route.SWAP}`)}>
+                        <span className="capitalize">single source swap</span>
                     </ToggleButton>
-                    <ToggleButton isActive={route === Route.LIQUIDITY} onClick={() => push(`/dex?tab=${Route.LIQUIDITY}`)}>
-                        <span>Liquidity</span>
+                    <ToggleButton isActive={route === Route.AGGREGATOR} onClick={() => push(`/trade?tab=${Route.AGGREGATOR}`)}>
+                        <span className="capitalize">aggregator</span>
+                    </ToggleButton>
+                    <ToggleButton isActive={route === Route.LIQUIDITY} onClick={() => push(`/trade?tab=${Route.LIQUIDITY}`)}>
+                        <span className="capitalize">liquidity</span>
                     </ToggleButton>
                 </div>
             </div>

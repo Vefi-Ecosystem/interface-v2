@@ -14,16 +14,16 @@ import { WETH, Fetcher, Trade, TokenAmount, Router, Percent, ETHER, CurrencyAmou
 import JSBI from 'jsbi';
 import { abi as erc20Abi } from 'quasar-v1-core/artifacts/@openzeppelin/contracts/token/ERC20/ERC20.sol/ERC20.json';
 import { abi as routerAbi } from 'quasar-v1-periphery/artifacts/contracts/QuasarRouter02.sol/QuasarRouter02.json';
-import SwapSettingsModal from '../../components/Dex/SwapSettingsModal';
-import TokensListModal from '../../components/Dex/TokensListModal';
+import SwapSettingsModal from '../../ui/Dex/SwapSettingsModal';
+import TokensListModal from '../../ui/Dex/TokensListModal';
 import { useWeb3Context } from '../../contexts/web3';
 import { usePairFromFactory, quote } from '../../hooks/dex';
 import routers from '../../assets/routers.json';
 import { useDEXSettingsContext } from '../../contexts/dex/settings';
-import TradeCard from '../../components/Dex/Card';
+import TradeCard from '../../ui/Dex/Card';
 import { useEtherBalance, useTokenBalance } from '../../hooks/wallet';
 import { useContract } from '../../hooks/global';
-import Toast from '../../components/Toast';
+import Toast from '../../ui/Toast';
 import { useImportedTokensWithListing, useTokenDetailsFromListing, useTokenImageURI } from '../../hooks/api';
 
 export default function Swap() {
